@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Stand-up Selector</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+
+<canvas class="canvas"></canvas>
+<audio id="stab-audio">
+  <source src="stab.mp3" type="audio/mpeg">
+  Your browser does not support the audio tag.
+</audio>
+<audio id="cheer-audio">
+  <source src="crowd-cheer.mp3" type="audio/mpeg">
+  Your browser does not support the audio tag.
+</audio>
+
+<div class="help">?</div> 
+
+<div class="ui">
+  <button class="ui-button" id="pick-button">Pick Stand-up Runner</button>
+</div>
+
+<div class="overlay">
+  <div class="tabs">
+    <div class="tabs-labels"><span class="tabs-label">Team Members</span></div>
+
+    <div class="tabs-panels">
+      <div class="tabs-panel names-panel">
+        <div class="names-content">
+          <h1>Stand-up Selector</h1>
+          <p>Enter your team members, one per line:</p>
+          <textarea class="names-input" id="names-input" placeholder="Alice&#10;Bob&#10;Charlie&#10;Diana"></textarea>
+          <button class="save-button" id="save-names">Save Team</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
