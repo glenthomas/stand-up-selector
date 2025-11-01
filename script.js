@@ -245,10 +245,6 @@ S.UI = (function () {
         } else {
           delay = Math.max(500, 1000 - (index * 20)); // Speed up
         }
-        if (!current.isWinner) {
-          var stab = document.getElementById("stab-audio");
-          stab.play();
-        }
         
         index++;
         setTimeout(showNext, delay);
