@@ -612,7 +612,7 @@ function draw() {
     return positions;
   }
   
-  for (var i = 0; i < 200; i++) {
+  for (var i = 0; i < 220; i++) {
     _b = b[i] = new Bird.obj();
     _b.pos.x = Math.random() * 800 - 400;
     _b.pos.y = Math.random() * 800 - 400;
