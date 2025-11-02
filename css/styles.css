@@ -39,7 +39,7 @@ canvas{
   width: 800px;
   height: 700px;
   position: absolute;
-  background: transparent url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/131045/clouds.png") 0 0 no-repeat;
+  background: transparent url("../img/clouds.png") 0 0 no-repeat;
   background-size: 100%;
   z-index:999;
 }
