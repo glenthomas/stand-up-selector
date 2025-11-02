@@ -546,7 +546,7 @@ function draw() {
   var formationMode = false;
   var formationPositions = [];
   var startTime = null; // Start as null - only set when button is pressed
-  var formationDelay = 10000; // 10 seconds
+  var formationDelay = 8000; // 10 seconds
   var targetName = ""; // Will be set when button is pressed
   var formationTriggered = false; // Flag to track if formation has been triggered
   
@@ -642,6 +642,11 @@ function draw() {
     formationTriggered = true;
     startTime = Date.now(); // Start the timer now
     
+    // Play bird sounds
+    const birdSounds = document.getElementById('bird-sounds');
+    birdSounds.currentTime = 0;
+    birdSounds.play();
+
     // Reset birds to random flocking with normal speed for countdown
     b.forEach(function(bird) {
       // Redistribute birds across a wide area
