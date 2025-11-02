@@ -612,7 +612,7 @@ function draw() {
     return positions;
   }
   
-  for (var i = 0; i < 220; i++) {
+  for (var i = 0; i < 200; i++) {
     _b = b[i] = new Bird.obj();
     _b.pos.x = Math.random() * 800 - 400;
     _b.pos.y = Math.random() * 800 - 400;
@@ -660,6 +660,7 @@ function draw() {
       bird._coll(true);
       bird.param(400, 400, 800);
       bird.msp = 5; // Normal speed during 10-second countdown
+      bird.area = 200; // Enable flocking behaviors
       if (bird.ept) {
         delete bird.ept;
       }
