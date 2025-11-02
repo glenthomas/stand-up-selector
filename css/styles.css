@@ -17,66 +17,90 @@ canvas{
   background: linear-gradient(#B7B0E3, #FFD3D6);  
 }
 
-
-@keyframes anim {
-  from {
-    transform: translateX(200%);
+@keyframes cloud-drift {
+  0% {
+    transform: translateX(120vw);
+    opacity: 0;
   }
-  to {
-    transform: translateX(-200%);
+  10% {
+    opacity: 1;
   }
-}
-
-@keyframes anime {
-  from {
-    transform: translateX(0);
+  90% {
+    opacity: 1;
   }
-  to {
-    transform: translateX(-200%);
+  100% {
+    transform: translateX(-140vw);
+    opacity: 0;
   }
 }
-.c1, .c2 {
+
+.sky {
+  position:absolute;
+  inset:0;
+  overflow:hidden;
+  pointer-events:none;
+  z-index:130;
+}
+
+.clouds {
+  position:relative;
+  width:100%;
+  height:100%;
+}
+
+.clouds > div {
+  position:absolute;
+  will-change: transform;
+  animation: cloud-drift var(--cloud-duration, 120s) linear infinite;
+  animation-delay: var(--cloud-delay, 0s);
+  opacity: 0;
+  z-index: 131;
+}
+
+.c1,
+.c2 {
   width: 800px;
   height: 700px;
-  position: absolute;
   background: transparent url("../img/clouds.png") 0 0 no-repeat;
   background-size: 100%;
-  z-index:999;
-}
-.c1.one, .c2.one {
-  top: -260px;
-  left: 0px;
-}
-.c1.two, .c2.two {
-  top: -200px;
-  left: 100px;
-}
-.c1.three, .c2.three {
-  top: -240px;
-  right: 100px;
-}
-.c1.four, .c22.four {
-  top: -180px;
-  right: 0px;
-}
-
-.c2 .one {
-  top: -209px;
-}
-@media (max-width: 1023px) {
-  .c2.one {left: -80px;}
-  .c2.two {left: -120px;}
-  .c2.three {right: 220px;}
-  .c2.four {right: 220px;}
+  filter: drop-shadow(0 30px 40px rgba(0,0,0,0.12));
 }
 
 .c1 {
-  animation: anime 1000s linear infinite forwards;
+  --cloud-duration: 95s;
 }
 
 .c2 {
-  transform: translateX(200%);
-  animation: anim 1000s linear infinite forwards;
+  --cloud-duration: 145s;
+  transform: scale(1.1);
+}
+
+.c1.one  { top: -260px; left: 0;     --cloud-delay: -12s; }
+.c1.two  { top: -200px; left: 140px; --cloud-delay: -46s; }
+.c1.three{ top: -240px; right: 160px;--cloud-delay: -78s; }
+.c1.four { top: -180px; right: 20px; --cloud-delay: -110s; }
+
+.c2.one  { top: -240px; left: -180px; --cloud-delay: -28s; }
+.c2.two  { top: -210px; left: 220px;  --cloud-delay: -92s; }
+.c2.three{ top: -250px; right: 240px; --cloud-delay: -154s; }
+.c2.four { top: -200px; right: 280px; --cloud-delay: -216s; }
+
+@media (max-width: 1023px) {
+  .c1,
+  .c2 {
+    width: 620px;
+    height: 540px;
+  }
+
+  .c1.one  { left: -120px; }
+  .c1.two  { left: -40px; }
+  .c1.three{ right: 180px; }
+  .c1.four { right: 120px; }
+
+  .c2.one  { left: -220px; }
+  .c2.two  { left: -80px; }
+  .c2.three{ right: 200px; }
+  .c2.four { right: 160px; }
 }
 
 /* UI Controls */
