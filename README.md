@@ -1,5 +1,5 @@
-# Stand up selector
+# Flock Picker
 
-Web app to choose the stand up runner.
+Web app to choose a team member.
 
-Hosted at [stand-up-selector.glen-thomas.com](https://stand-up-selector.glen-thomas.com/).
+Hosted at [flock-picker.glen-thomas.com](https://flock-picker.glen-thomas.com/).
